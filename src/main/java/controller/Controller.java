@@ -8,20 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 
-@WebServlet(urlPatterns= {"/Controller","/main"})
+@WebServlet(urlPatterns= {"/Controller","/lanches"})
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	DAO con = new DAO();
+	
     public Controller() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		DAO con = new DAO();
-		con.testeConexao();
+		String action = request.getServletPath();
+		if(action.equals("/lanches")) {
+			this.lanches(request, response);
+		}
+	}
+	protected void lanches(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect("Lanches.jsp");
 	}
 
 }
