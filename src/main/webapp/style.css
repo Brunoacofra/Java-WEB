@@ -25,3 +25,32 @@ img{
 	color:red;
 	cursor:grab;
 }
+.sbt{
+	background-color:#008000;
+	border-radius:3px;
+	text-align:center;
+	color:white;
+	width:60px;
+	height:30px;
+	border:0px;
+}
+.sbt:hover{
+	cursor:pointer;
+}
+.formIngre{
+	margin:25px;
+	border:1px solid black;
+}
+.formIngre div {
+	margin:15px;
+}
+#formulario{
+	text-align:center;
+	
+}
+input {
+	width:300px;
+	height:30px;
+	border-radius:3px;
+	
+}
